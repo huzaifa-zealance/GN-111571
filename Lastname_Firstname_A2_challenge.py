@@ -206,6 +206,7 @@ if __name__ == '__main__':
     ## TASK 2
     ## Combining CSV's
     print("Task 1: Combining CSV's")
+    ## </path/to/csvdir>
     c_directory = "csvdir"
     output_filename = "task2_out.csv"
     combine_csv_files(c_directory, output_filename)
@@ -216,6 +217,7 @@ if __name__ == '__main__':
     ## TASK 3
     ## Making HTML files
     print("Task 1: Making HTML files")
+    ## </path/to/htmlplots>
     h_directory = "htmlplots"
     make_html_files(h_directory)
     #####################################
