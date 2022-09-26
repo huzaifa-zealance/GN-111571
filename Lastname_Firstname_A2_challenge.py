@@ -195,25 +195,25 @@ if __name__ == '__main__':
     #####################################
     ### TASK 1
     ### Quality Control
-    # print("Task 1: Quality control")
-    # example_sheet = np.array([[1,0,0], [1,0,1], [0,0,2]])
-    # if_passed = is_sheet_usable(example_sheet)
-    # print(f"Sheet is Passed? - {if_passed}")
+    print("Task 1: Quality control")
+    example_sheet = np.array([[1,0,0], [1,0,1], [0,0,2]])
+    if_passed = is_sheet_usable(example_sheet)
+    print(f"Sheet is Passed? - {if_passed}")
     #####################################
     
     
     #####################################
     ## TASK 2
     ## Combining CSV's
-    # directory = "/home/huzaifa/Personal/Exec/GN-111571/Task 2/csvdir"
-    # output_filename = "task2_out.csv"
-    # combine_csv_files(directory, output_filename)
+    c_directory = "csvdir"
+    output_filename = "task2_out.csv"
+    combine_csv_files(c_directory, output_filename)
     #####################################
     
     
     #####################################
     ## TASK 3
     ## Making HTML files
-    directory = "/home/huzaifa/Personal/Exec/GN-111571/Task 2/htmlplots"
-    make_html_files(directory)
+    h_directory = "htmlplots"
+    make_html_files(h_directory)
     #####################################
