@@ -1,10 +1,9 @@
 '''SYSTEM PACKAGES'''
-import os, sys
+import os
 import numpy as np
 from pandas import DataFrame as DF
 from pandas import read_csv as READCSV
 from glob import glob
-from pprint import pprint as pp
 
 
 #########################################################################
@@ -14,7 +13,7 @@ def is_sheet_usable(sheet) :
     if the sheet can be used or not
     '''
     
-    #Checking if type is ndarray - else raising value error
+    #Checking if type is ndarray - else raising type error
     if type(sheet) != np.ndarray :
         raise TypeError("Input type is not a numpy array!")
 
@@ -101,7 +100,7 @@ def combine_csv_files(directory, output_filename) :
     combined_df = combined_df.dropna(thresh=combined_df.shape[0]*perc_th, 
                                      how='all', axis=1)
     
-    # Dumping the final data into dataframe
+    # Dumping the final data into output csv file
     combined_df.to_csv(output_filename)
     
     return 1
@@ -143,7 +142,7 @@ def make_html_files(directory) :
         
         curr_fpath = os.path.join(directory, each_f_data[0])
         html_path = os.path.join(directory, each_f_data[1])
-        plot_fname = os.path.join(directory, f"{each_f_data[2]}.png")
+        plot_fname = f"{each_f_data[2]}.png"#os.path.join(directory, f"{each_f_data[2]}.png")
         
         if fid == 0 :
             next_link = csv_to_html_map[fid+1][1]
@@ -196,7 +195,7 @@ if __name__ == '__main__':
     ### TASK 1
     ### Quality Control
     print("Task 1: Quality control")
-    example_sheet = np.array([[1,0,0], [1,0,1], [0,0,2]])
+    example_sheet = np.array([[1,0,0], [1,0,1], [0,0,1]])
     if_passed = is_sheet_usable(example_sheet)
     print(f"Sheet is Passed? - {if_passed}")
     #####################################
@@ -205,7 +204,7 @@ if __name__ == '__main__':
     #####################################
     ## TASK 2
     ## Combining CSV's
-    print("Task 1: Combining CSV's")
+    print("Task 2: Combining CSV's")
     ## </path/to/csvdir>
     c_directory = "csvdir"
     output_filename = "task2_out.csv"
@@ -216,7 +215,7 @@ if __name__ == '__main__':
     #####################################
     ## TASK 3
     ## Making HTML files
-    print("Task 1: Making HTML files")
+    print("Task 3: Making HTML files")
     ## </path/to/htmlplots>
     h_directory = "htmlplots"
     make_html_files(h_directory)
